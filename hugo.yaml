@@ -1,4 +1,4 @@
-baseURL: https://acme-corporation.com/
+baseURL: http://example.org/
 languageCode: en-us
 title: Acme Corporation
 theme: Eclectic
@@ -53,3 +53,11 @@ params:
 
   recent_posts:
     enable: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    lineNos: true
+enableEmoji: true
