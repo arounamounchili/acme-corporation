@@ -10,7 +10,7 @@ author:
   location: New York
   phone: (999) 999-9999
   hours: "**Mon-Fri:** 9:00AM - 6:00PM, ET"
-
+# this is a comment
 menu:
   main:
     - identifier: about
@@ -23,8 +23,7 @@ menu:
       weight: 200
 params:
   color: "#4f46e5"
-  copyright: "Copyright &copy; 2022 Acme Corporation.
-    All Rights Reserved."
+  copyright: "Copyright &copy; 2022 Acme Corporation. All Rights Reserved."
   footer:
     - title: About
       content: >
