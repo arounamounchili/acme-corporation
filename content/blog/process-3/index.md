@@ -1,6 +1,8 @@
 ---
 title: Our Manufacturing Process Part III
 date: "2019-01-03T00:00:00Z"
+tags: [manufacturing]
+categories: [circle, manufacturing]
 ---
 
 Machining is any process in which a cutting tool is used to remove small chips of material from the workpiece (the workpiece is often called the "work"). To perform the operation, relative motion is required between the tool and the work. This relative motion is achieved in most machining operation by means of a primary motion, called "cutting speed" and a secondary motion called "feed".[7] The shape of the tool and its penetration into the work surface, combined with these motions, produce the desired shape of the resulting work surface.
@@ -19,8 +21,8 @@ Reaming is one of the sizing operations that removes a small amount of metal fro
 
 In milling, a rotating tool with multiple cutting edges is moved slowly relative to the material to generate a plane or straight surface. The direction of the feed motion is perpendicular to the tool's axis of rotation. The speed motion is provided by the rotating milling cutter. The two basic forms of milling are:
 
-* Peripheral milling
-* Face milling.
+- Peripheral milling
+- Face milling.
 
 Other conventional machining operations include shaping, planing, broaching and sawing. Also, grinding and similar abrasive operations are often included within the category of machining.
 
