@@ -52,3 +52,10 @@ Bob
 Gabby
 : Cool Content Master
 : Cautious
+
+## Our Values
+
+{{< repeat 5>}}
+Customer is our _number 1_ priority.
+{{< / repeat>}}
+Nothing else.

@@ -4,9 +4,10 @@ menu:
     name: Blog
     identifier: blog
     weight: 110
+    post: From our editor
   footer:
     name: Blog
-    weight: 110
+    weight: 100
 ---
 
 # The Acme Blog
