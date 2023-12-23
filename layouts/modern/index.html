@@ -2,47 +2,35 @@
 
 {{define "body"}}
 {{$title := default site.Title .Title}}
-  <header>
-    <a href="{{ site.BaseURL | relLangURL }}">
-    <img src="./image/logo.svg" alt="Acme Logo" 
-             height="36" width="48" />
-        Acme Corporation
-    </a>
-    {{with site.Menus.main }}
-        <nav>
-          <button class="hamburger">&#9776;</button>
-          <ul>
-            {{range .}}
-              <li>
-                <a href="{{.URL}}">{{.Name | humanize}}</a>
-              </li>
-            {{end}}
-          </ul>
-        </nav>
-      {{end}}
-    </header>
-    <section id="intro">
-      {{with $title}}<h1>{{.}}</h1>{{end}}
-      {{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}
-      <a href="{{ref . (.Param "explore")}}">Explore</a>
+    <section id="hero">
+      <img class="hero" src="{{partialCached "hero.svg" $ "nothing"}}" alt="Acme Corporation" width="24rem" />
+      <div class="intro">
+        {{with $title}}<h1>{{.}}</h1>{{end}}
+        {{with .Param "subtitle"}}<h2>{{. | humanize | markdownify}}</h2>{{end}}
+        <a href="{{ref . (.Param "explore")}}">Explore</a>
+        {{ partialCached "menu.html" (dict "Menu" site.Menus.footer) "footer" }}
+      </div>
     </section>
-    {{with resources.GetMatch "products.csv"}}
-    <section id="products">
+    {{with (partialCached "products.html" "cache")}}
+    <section id="store">
       <h1>Our Products</h1>
-      {{with . | transform.Unmarshal (dict "delimiter" ",")}}
-        <table>
-          {{range $i, $value := .}}
-            {{if eq $i 0}}<thead>{{end}}
-              <tr>
-                {{range $value}}
-                <td>{{.}}</td>
-                {{end}}
-              </tr>
-              {{if eq $i 0}}</thead>{{end}}
-            {{end}}
-        </table>
-      {{end}}
-      <a href="{{.Permalink}}" download>Download listing</a>
+      <ul>
+        {{range $name, $data := .}}
+        <li>
+          <a href="#">
+            {{$img := resources.GetMatch (print "image/products/" $name ".*") | images.Filter (images.Overlay (resources.GetMatch "image/watermark.*") 0 0 )}}
+            {{$img := $img.Resize "1000x"}}
+            <img src="{{$img.Permalink}}" alt="{{$name}}">
+            <h2>{{$name}}</h2>
+            <div class="price">$ {{$data.Price}}</div>
+            <div class="rating">
+              {{range (seq $data.Rating)}}&starf;{{end}}
+              {{- range seq (sub 5 ($data.Rating | int))}}&star;{{end}}
+            </div>
+          </a>
+        </li>
+        {{end}}
+      </ul>
     </section>
     {{end}}
     <section id="description">
@@ -78,6 +66,10 @@
           {{range first 3 .}}
           <li class="post">
             <a href="{{.Permalink}}">
+            {{$title := .Title}}
+            {{with (.Resources.GetMatch "cover.*")}}
+              <img alt="{{$title}}" loading="lazy" src="{{(.Resize "1000x").Permalink}}" />
+            {{end}}
               <h2>
                 {{.Title}}
               </h2>
@@ -109,41 +101,4 @@
     </div>
     </section>
     {{end}}
-    <footer class="dark">
-      {{with site.Menus.footer }}
-      <nav>
-        <ul>
-        {{range .}}
-        <li>
-          <a href="{{.URL}}">{{.Name | humanize}}</a>
-        </li>
-        {{end}}
-        </ul>
-      </nav>
-      {{end}}
-      <ul>
-        {{with site.Author.facebook}}
-          <li>
-            <a href="{{.}}" aria-label="Facebook">
-              <i class="  icon-facebook"></i>
-            </a>
-          </li>
-        {{end}}
-        {{with site.Author.twitter}}
-          <li>
-            <a href="{{.}}" aria-label="Twitter">
-              <i class="icon-twitter"></i>
-            </a>
-          </li>
-        {{end}}
-        {{with site.Author.email}}
-          <li>
-            <a href="mailto:{{.}}" aria-label="email">
-              <i class="icon-email"></i>
-            </a>
-          </li>
-        {{end}}
-      </ul>
-      <div>{{.Param "copyright" | markdownify}}</div>
-  </footer>
 {{ end }}
