@@ -17,29 +17,32 @@ We provide :smile: to hundreds of happy customers.
 
 {{< youtube id="nLAVanlu5js" >}}
 
-## Manufacturing
+Manufacturing
+--------------
 
 At Acme Corporation, we take pride in what we create. Our manufacturing process goes through **3 different** stages of fine workmanship to give you the best possible shapes.
 
 <img style="float:right; margin: 20px;" src="draw.jpg">
 
 1. **Drawing** Our shapes are drawn with precision to 1/100 of a millimeter.
-   - We use advanced vector drawing tools to create our catalog.
-   - Quality checking happens hundreds of times for each shape we create.
-     - We have high-quality bots that inspect our output.
-     - There is also a manual team inspecting each product.
-     - All our bugs are turned into automated checks that bots perform in every future shape.
-   - We round all corners and clean up properly.
+   * We use advanced vector drawing tools to create our catalog.
+   * Quality checking happens hundreds of times for each shape we create.
+     * We have high-quality bots that inspect our output.
+     * There is also a manual team inspecting each product.
+     * All our bugs are turned into automated checks that bots perform in every future shape.
+   * We round all corners and clean up properly.
 2. **Rasterizing** Our raster engine is world-class and keeps the vector right until it gets to our high-quality laser printers.
 3. **Delivery** Our output is hosted on the fastest of CDN with a 99.99% uptime and the bandwidth that can take care of all your load.
 
 {{<divider>}}
 
-## Products
+Products
+---------
 
 {{% productInfo %}}
 
-## Team
+Team
+-----
 
 Alex
 : Hippy Web Developer
@@ -53,9 +56,9 @@ Gabby
 : Cool Content Master
 : Cautious
 
-## Our Values
-
+Our Values
+-----------
 {{< repeat 5>}}
-Customer is our _number 1_ priority.
+Customer is our *number 1* priority.
 {{< / repeat>}}
 Nothing else.

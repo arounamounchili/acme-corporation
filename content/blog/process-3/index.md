@@ -1,5 +1,6 @@
 ---
 title: Our Manufacturing Process Part III
+series: [manufacturing]
 date: "2019-01-03T00:00:00Z"
 tags: [manufacturing]
 categories: [circle, manufacturing]
@@ -21,8 +22,8 @@ Reaming is one of the sizing operations that removes a small amount of metal fro
 
 In milling, a rotating tool with multiple cutting edges is moved slowly relative to the material to generate a plane or straight surface. The direction of the feed motion is perpendicular to the tool's axis of rotation. The speed motion is provided by the rotating milling cutter. The two basic forms of milling are:
 
-- Peripheral milling
-- Face milling.
+* Peripheral milling
+* Face milling.
 
 Other conventional machining operations include shaping, planing, broaching and sawing. Also, grinding and similar abrasive operations are often included within the category of machining.
 
