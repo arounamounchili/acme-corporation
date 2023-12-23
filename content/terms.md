@@ -1,8 +1,9 @@
 ---
 menu:
   footer:
-    name: Terms of use
+    name: Terms of Use
     weight: 200
+type: modern
 ---
 
 # Terms of Use
